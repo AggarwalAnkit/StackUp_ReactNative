@@ -16,7 +16,8 @@ class PostList extends Component {
   }
 
   componentWillMount() {
-    axios.get('https://api.stackexchange.com/2.2/questions/unanswered?order=desc&sort=activity&tagged=react&site=stackoverflow')
+    const url = `https://api.stackexchange.com/2.2/questions/unanswered?order=desc&sort=activity&tagged=${this.props.tag}&site=stackoverflow`;
+    axios.get(url)
     .then(response => {
       this.setState({ dataSource: this.ds.cloneWithRows(response.data.items), isLoading: false });
     });

@@ -1,13 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
-import Posts from './components/Posts';
+import PostList from './components/PostList';
 
-const App = () => {
-  return (
-    <View style={{ marginTop: 20, marginLeft: 10, marginRight: 10, paddingBottom: 20, flex: 1 }} >
-      <Posts />
-    </View>
-  );
-};
+const App = () => (
+  <View style={{ marginTop: 20, paddingBottom: 20, flex: 1 }} >
+    <PostList />
+  </View>
+);
 
 export default App;

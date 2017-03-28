@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import PostList from './components/PostList';
-import { Input, Button, Card, CardSection, Spinner } from './components/common';
+import PostList from './PostList';
+import { Input, Button, Card, CardSection, Spinner } from '../components/common';
 
 class App extends Component {
   state = { tag: '', searchClicked: false };

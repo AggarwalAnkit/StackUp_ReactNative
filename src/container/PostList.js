@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { ListView } from 'react-native';
 import axios from 'axios';
-import { Spinner } from './common';
-import Post from './Post';
+import { Spinner } from '../components/common';
+import Post from '../components/Post';
 
 class PostList extends Component {
 

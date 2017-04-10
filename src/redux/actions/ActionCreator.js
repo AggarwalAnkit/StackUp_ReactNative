@@ -36,7 +36,7 @@ export const getPosts = (tag) => (
 
     axios.get(url)
     .then(response => {
-      if (!response.ok) {
+      if (response.status !== 200) {
         throw Error(response.statusText);
       }
 

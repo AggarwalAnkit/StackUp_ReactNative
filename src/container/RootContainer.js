@@ -45,7 +45,8 @@ class RootContainer extends Component {
 
 const mapStateToProps = (state) => ({
   tag: state.tag,
-  posts: state.posts
+  posts: state.posts,
+  isLoading: state.isLoading
 });
 
 const mapDispatchToProps = (dispatch) => ({

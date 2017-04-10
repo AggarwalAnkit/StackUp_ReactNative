@@ -1,47 +1,14 @@
-import React, { Component } from 'react';
-import { View } from 'react-native';
-import PostList from './PostList';
-import { Input, Button, Card, CardSection, Spinner } from '../components/common';
+import React from 'react';
+import { Provider } from 'react-redux';
+import configureStore from '../redux/store/ConfigureStore';
+import RootContainer from './RootContainer';
 
-class App extends Component {
-  state = { tag: '', searchClicked: false };
+const store = configureStore({});
 
-  onButtonPressed() {
-    this.setState({ searchClicked: true });
-  }
-
-  renderPosts() {
-    if (this.state.searchClicked) {
-      return <PostList tag={this.state.tag ? this.state.tag : 'react-native'} />;
-    }
-
-    return <Spinner size="small" />;
-  }
-
-  render() {
-    return (
-      <View style={{ marginTop: 20, paddingBottom: 20, flex: 1 }} >
-        <Card>
-          <CardSection>
-            <Input
-              placeholder="react-native"
-              label="Tag"
-              value={this.state.tag}
-              onChangeText={tag => this.setState({ tag, searchClicked: false })}
-            />
-          </CardSection>
-
-          <CardSection>
-            <Button onPress={this.onButtonPressed.bind(this)}>
-              Search
-            </Button>
-          </CardSection>
-        </Card>
-
-        {this.renderPosts()}
-      </View>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <RootContainer />
+  </Provider>
+);
 
 export default App;
